@@ -1,12 +1,14 @@
 import XCTest
 
 final class BankingFlowTests: BaseClass {
-    func testAppLaunch() {
-        XCTAssertEqual(app.state, .runningForeground)
+    let bankingSteps = EasyBankSteps()
 
-        let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "App Launch"
-        screenshot.lifetime = .keepAlways
-        add(screenshot)
+    func testInvalidEmailFormat() {
+        bankingSteps
+            .openLoginPage()
+            .enterEmail(Constants.INVALID_EMAIL)
+            .enterPassword(Constants.PASSWORD)
+            .loginAttempt()
+            .verifyErrorMessage(Constants.ERROR_MESSAGE_EMAIL)
     }
 }
