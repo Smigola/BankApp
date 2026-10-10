@@ -11,4 +11,13 @@ final class BankingFlowTests: BaseClass {
             .loginAttempt()
             .verifyErrorMessage(Constants.ERROR_MESSAGE_EMAIL)
     }
+
+    func testInvalidCredentials() {
+        bankingSteps
+            .openLoginPage()
+            .enterEmail(Constants.VALID_EMAIL)
+            .enterPassword(Constants.PASSWORD)
+            .loginAttempt()
+            .verifyErrorMessage(Constants.ERROR_MESSAGE_INVALID_CREDENTIALS)
+    }
 }

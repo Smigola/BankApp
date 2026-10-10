@@ -10,5 +10,7 @@ class EasyBankPage: BaseClass {
     var loginPasswordTextField : XCUIElement { app.secureTextFields["login.password"] }
     var loginSubmitButton : XCUIElement { app.buttons["login.submit"] }
     var loginErrorMessage : XCUIElement { app.staticTexts["login.error"] }
+
+    
     
 }
