@@ -72,4 +72,11 @@ final class EasyBankSteps {
         return self
     }
 
+    func validateLoginPage() -> EasyBankSteps {
+        XCTAssertTrue(bankPage.loginEmail.exists)
+        XCTAssertTrue(bankPage.loginPassword.exists)
+        XCTAssertTrue(bankPage.loginSubmitButton.exists)
+        return self
+    }
+
 }

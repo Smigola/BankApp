@@ -32,6 +32,7 @@ final class BankingFlowTests: BaseClass {
 
         bankingSteps
             .logout()
+            .validateLoginPage()
             .openLoginPage()
             .enterLoginEmail(Constants.VALID_EMAIL)
             .enterLoginPassword(Constants.PASSWORD)
