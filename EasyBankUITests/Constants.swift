@@ -1,5 +1,7 @@
+import Foundation
+
 struct Constants {
-    
+
     static let INVALID_EMAIL = "invalid_email"
     static var VALID_EMAIL: String {"test\(UUID().uuidString)@gmail.com"}
     static let PASSWORD = "Password1@"

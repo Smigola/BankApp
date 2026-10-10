@@ -6,8 +6,8 @@ final class BankingFlowTests: BaseClass {
     func testInvalidEmailFormat() {
         bankingSteps
             .openLoginPage()
-            .enterEmail(Constants.INVALID_EMAIL)
-            .enterPassword(Constants.PASSWORD)
+            .enterLoginEmail(Constants.INVALID_EMAIL)
+            .enterLoginPassword(Constants.PASSWORD)
             .loginAttempt()
             .verifyErrorMessage(Constants.ERROR_MESSAGE_EMAIL)
     }
@@ -15,9 +15,27 @@ final class BankingFlowTests: BaseClass {
     func testInvalidCredentials() {
         bankingSteps
             .openLoginPage()
-            .enterEmail(Constants.VALID_EMAIL)
-            .enterPassword(Constants.PASSWORD)
+            .enterLoginEmail(Constants.VALID_EMAIL)
+            .enterLoginPassword(Constants.PASSWORD)
             .loginAttempt()
             .verifyErrorMessage(Constants.ERROR_MESSAGE_INVALID_CREDENTIALS)
+    }
+
+    func testRegisterLoginFlow() {
+        bankingSteps
+            .openRegisterPage()
+            .enterRegisterEmail(Constants.VALID_EMAIL)
+            .enterRegisterPassword(Constants.PASSWORD)
+            .enterRegisterPasswordRepeat(Constants.PASSWORD)
+            .registerAttempt()
+            .validateHomePage()
+
+        bankingSteps
+            .logout()
+            .openLoginPage()
+            .enterLoginEmail(Constants.VALID_EMAIL)
+            .enterLoginPassword(Constants.PASSWORD)
+            .loginAttempt()
+            .validateHomePage()
     }
 }
