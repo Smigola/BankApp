@@ -2,7 +2,6 @@
 import XCTest
 
 class PageClasss: BaseClass {
-    private let app = XCUIApplication()
 
     var onBoardingLoginButton : XCUIElement { app.buttons["onboarding.login"] }
     var onBoardingRegisterButton : XCUIElement { app.buttons["onboarding.register"] }

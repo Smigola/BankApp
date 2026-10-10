@@ -1,4 +1,4 @@
-Class Constants {
+struct Constants {
     static let INVALID_EMAIL = "invalid_email"
     static let PASSWORD = "Password1@"
 
