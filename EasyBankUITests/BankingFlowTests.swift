@@ -22,9 +22,11 @@ final class BankingFlowTests: BaseClass {
     }
 
     func testRegisterLoginFlow() {
+        let email = Constants.VALID_EMAIL
+
         bankingSteps
             .openRegisterPage()
-            .enterRegisterEmail(Constants.VALID_EMAIL)
+            .enterRegisterEmail(email)
             .enterRegisterPassword(Constants.PASSWORD)
             .enterRegisterPasswordRepeat(Constants.PASSWORD)
             .registerAttempt()
@@ -33,7 +35,7 @@ final class BankingFlowTests: BaseClass {
         bankingSteps
             .logout()
             .validateLoginPage()
-            .enterLoginEmail(Constants.VALID_EMAIL)
+            .enterLoginEmail(email)
             .enterLoginPassword(Constants.PASSWORD)
             .loginAttempt()
             .validateHomePage()
