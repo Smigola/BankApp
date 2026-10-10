@@ -26,7 +26,7 @@ final class EasyBankSteps {
     }
 
     func verifyErrorMessage(_ message: String) -> EasyBankSteps {
-        XCTAssertContains(bankPage.loginErrorMessage.label, message)
+        XCTAssertTrue(bankPage.loginErrorMessage.label.contains(message))
         return self
     }
 

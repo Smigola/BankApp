@@ -1,7 +1,7 @@
 
 import XCTest
 
-class PageClasss: BaseClass {
+class EasyBankPage: BaseClass {
 
     var onBoardingLoginButton : XCUIElement { app.buttons["onboarding.login"] }
     var onBoardingRegisterButton : XCUIElement { app.buttons["onboarding.register"] }
